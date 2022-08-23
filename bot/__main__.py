@@ -22,6 +22,7 @@ from .helper.telegram_helper.button_build import ButtonMaker
 from .helper.ext_utils.heroku_helper import getHerokuDetails
 from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, delete, count, leech_settings, search, rss
 
+now=datetime.now(pytz.timezone(f'{TIMEZONE}'))
 
 def stats(update, context):
     if ospath.exists('.git'):
