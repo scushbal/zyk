@@ -41,23 +41,18 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<b> \n'\
-            f'<b>🎉 Commit Date:</b> {last_commit}\n'\
-            f'<b>🤖 Bot Uptime:</b> {currentTime}\n'\
-            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<b> \n\n'\
-            f'<b>💽 Total Disk Space:</b> {total}\n'\
-            f'<b>📀 Used:</b> {used} | <b>💿 Free:</b> {free}\n'\
-            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<b> \n\n'\
-            f'<b>🔼 Up:</b> {sent} | '\
-            f'<b>🔽 Down:</b> {recv}\n'\
-            f'<b>🖥 ️CPU:</b> {cpuUsage}% | '\
-            f'<b>🎮 RAM:</b> {mem_p}% | '\
-            f'<b>💽 DISK:</b> {disk}%\n'\
-            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<b> \n\n'\
-            f'<b>💾 Total Memory:</b> {mem_t}\n'\
-            f'<b>💿 Free:</b> {mem_a} | '\
-            f'<b>💿 Used:</b> {mem_u}\n'\
-            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<b> /n\n'
+    stats = f'<b>Commit Date:</b> {last_commit}\n\n'\
+            f'<b>Bot Uptime:</b> {currentTime}\n\n'\
+            f'<b>Total Disk Space:</b> {total}\n'\
+            f'<b>Used:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b>Up:</b> {sent} | '\
+            f'<b>Down:</b> {recv}\n\n'\
+            f'<b>CPU:</b> {cpuUsage}% | '\
+            f'<b>RAM:</b> {mem_p}% | '\
+            f'<b>DISK:</b> {disk}%\n\n'\
+            f'<b>Total Memory:</b> {mem_t}\n'\
+            f'<b>Free:</b> {mem_a} | '\
+            f'<b>Used:</b> {mem_u}\n\n'
     heroku = getHerokuDetails(HEROKU_API_KEY, HEROKU_APP_NAME)
     if heroku: stats += heroku
     sendMessage(stats, context.bot, update.message)
