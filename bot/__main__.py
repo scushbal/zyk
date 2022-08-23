@@ -57,7 +57,7 @@ def stats(update, context):
             f'<b>💾 Total Memory:</b> {mem_t}\n'\
             f'<b>💿 Free:</b> {mem_a} | '\
             f'<b>💿 Used:</b> {mem_u}\n'\
-            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n'
+            f'<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n'
     heroku = getHerokuDetails(HEROKU_API_KEY, HEROKU_APP_NAME)
     if heroku: stats += heroku
     sendMessage(stats, context.bot, update.message)
