@@ -373,6 +373,11 @@ try:
 except:
     ZIP_UNZIP_LIMIT = None
 try:
+    WAYBACK_ENABLED = getConfig("WAYBACK_ENABLED")
+    WAYBACK_ENABLED = WAYBACK_ENABLED.lower() == "true"
+except:
+    WAYBACK_ENABLED = False
+try:
     RSS_CHAT_ID = getConfig('RSS_CHAT_ID')
     if len(RSS_CHAT_ID) == 0:
         raise KeyError
