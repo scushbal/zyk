@@ -41,6 +41,8 @@ def stats(update, context):
     sent = get_readable_file_size(net_io_counters().bytes_sent)
     recv = get_readable_file_size(net_io_counters().bytes_recv)
     cpuUsage = cpu_percent(interval=0.5)
+    p_core = cpu_count(logical=False)
+    t_core = cpu_count(logical=True)
     memory = virtual_memory()
     mem_p = memory.percent
     mem_t = get_readable_file_size(memory.total)
@@ -60,10 +62,6 @@ def stats(update, context):
             f'<b>├ 🖥️ CPU USAGE:</b> {cpuUsage}%\n'\
             f'<b>├ 🎮 RAM:</b> {mem_p}%\n'\
             f'<b>├ 👸 DISK USED:</b> {disk}%\n'\
-            f'<b>├ 💽 PHYSICAL CRORES:</b> {p_core}\n'\
-            f'<b>├ 🍥 TOTAL CRORES:</b> {t_core}\n'\
-            f'<b>├ ✳ SWAP:</b> {swap_t}\n'\
-            f'<b>├ 👸 SWAP USED:</b> {swap_p}%\n'\
             f'<b>├ ☁ TOTAL OF MEMORY:</b> {mem_t}\n'\
             f'<b>├ 💃 FREE OF MEMORY:</b> {mem_a}\n'\
             f'<b>╰ 👰 USAGE OF MEMORY:</b> {mem_u}\n'
