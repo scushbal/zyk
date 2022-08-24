@@ -8,7 +8,7 @@ from datetime import datetime
 from sys import executable
 from telegram import InlineKeyboardMarkup
 from telegram.ext import CommandHandler
-
+from bot.modules.wayback import getRandomUserAgent
 
 from bot import bot, dispatcher, TIMEZONE, updater, botStartTime, IGNORE_PENDING_REQUESTS, LOGGER, Interval, INCOMPLETE_TASK_NOTIFIER, DB_URI, alive, app, main_loop, HEROKU_API_KEY, HEROKU_APP_NAME, USER_SESSION_STRING, app_session, \
                 START_BTN1_NAME, START_BTN1_URL, START_BTN2_NAME, START_BTN2_URL
@@ -94,6 +94,8 @@ def getHerokuDetails(h_api_key, h_app_name):
         LOGGER.error(g)
         return None
 
+IMAGE_X = "https://telegra.ph/file/3b531ac67ed53941fdce8.jpg"
+
 now=datetime.now(pytz.timezone(f'{TIMEZONE}'))
 
 def stats(update, context):
@@ -138,6 +140,7 @@ def stats(update, context):
     heroku = getHerokuDetails(HEROKU_API_KEY, HEROKU_APP_NAME)
     if heroku: stats += heroku
     sendMessage(stats, context.bot, update.message)
+    update.effective_message.reply_photo(IMAGE_X, stats, parse_mode=ParseMode.HTML)
 
 
 def start(update, context):
