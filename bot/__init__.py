@@ -541,9 +541,9 @@ except KeyError:
 try:
     TITLE_NAME = getConfig('TITLE_NAME')
     if len(TITLE_NAME) == 0:
-        TITLE_NAME = 'Helios-Mirror-Search'
+        TITLE_NAME = 'Ryz-Mirror-Search'
 except KeyError:
-    TITLE_NAME = 'Helios-Mirror-Search'
+    TITLE_NAME = 'Ryz-Mirror-Search'
 try:
     AUTO_DELETE_UPLOAD_MESSAGE_DURATION = int(getConfig('AUTO_DELETE_UPLOAD_MESSAGE_DURATION'))
 except KeyError:
@@ -562,7 +562,7 @@ try:
         raise KeyError
 except:
     START_BTN1_NAME = 'Repo'
-    START_BTN1_URL = 'https://github.com/sahrulmaulana/mirror-bot-tg'
+    START_BTN1_URL = 'https://github.com/sahrulmaulana/ryz-mirror-bot'
 
 try:
     START_BTN2_NAME = getConfig('START_BTN2_NAME')
