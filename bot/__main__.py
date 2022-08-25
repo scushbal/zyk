@@ -8,7 +8,7 @@ from sys import executable
 from telegram import InlineKeyboardMarkup
 from telegram.ext import CommandHandler
 
-from bot import bot, dispatcher, TIMEZONE, updater, botStartTime, IGNORE_PENDING_REQUESTS, LOGGER, Interval, INCOMPLETE_TASK_NOTIFIER, DB_URI, alive, app, main_loop, HEROKU_API_KEY, HEROKU_APP_NAME, USER_SESSION_STRING, app_session, \
+from bot import bot, dispatcher, updater, botStartTime, IGNORE_PENDING_REQUESTS, LOGGER, Interval, INCOMPLETE_TASK_NOTIFIER, DB_URI, alive, app, main_loop, HEROKU_API_KEY, HEROKU_APP_NAME, USER_SESSION_STRING, app_session, \
                 START_BTN1_NAME, START_BTN1_URL, START_BTN2_NAME, START_BTN2_URL
 
 from .helper.ext_utils.fs_utils import start_cleanup, clean_all, exit_clean_up
