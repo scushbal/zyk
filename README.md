@@ -5,7 +5,7 @@ This is a Telegram Bot written in Python for mirroring files on the Internet to 
 ## If you Like My work Star the repo and Follow me on Github
 
 # Features:
-## By [Sahrul Maulana](https://github.com/sahrulmaulana)
+## By [RyzXD](https://github.com/ryz-code)
 - Mirror logs
 - Leech logs
 - Source link button
